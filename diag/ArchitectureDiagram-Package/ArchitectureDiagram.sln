@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ArchitectureDiagram", "ArchitectureDiagram\ArchitectureDiagram.modelproj", "{3C98E06D-14B7-44F4-9614-510D0BA9CB36}"
 EndProject
 Global
