@@ -10,22 +10,17 @@
         <text>JWP</text>
       </controlProperties>
     </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::ComboBox" x="549" y="91" w="351" h="-1" measuredW="87" measuredH="23" zOrder="2" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Countries</text>
-      </controlProperties>
-    </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::ComboBox" x="549" y="129" w="277" h="-1" measuredW="65" measuredH="23" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::ComboBox" x="549" y="129" w="218" h="-1" measuredW="65" measuredH="23" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Cities</text>
       </controlProperties>
     </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="834" y="129" w="66" h="23" measuredW="66" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="774" y="129" w="126" h="23" measuredW="120" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Search</text>
+        <text>Search%20Weather</text>
       </controlProperties>
     </control>
-    <control controlID="5" controlTypeID="com.balsamiq.mockups::List" x="492" y="167" w="408" h="217" measuredW="100" measuredH="275" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::List" x="492" y="167" w="408" h="217" measuredW="100" measuredH="275" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>none</borderStyle>
         <hrefs>JWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2CJWP-UI-Project-View_Details%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%26bm%3BJWP-UI-Project-View_Details.bmml%2C%2C%2C</hrefs>
@@ -33,11 +28,22 @@
         <text>-------------------------------------------------------------------------------%0A%20-------------------------------------------------------------------------------%0A-------------------------------------------------------------------------------%0A%20-------------------------------------------------------------------------------%0A-------------------------------------------------------------------------------%0A%20-------------------------------------------------------------------------------%0A-------------------------------------------------------------------------------%0A%20-------------------------------------------------------------------------------%0A-------------------------------------------------------------------------------%0A%20-------------------------------------------------------------------------------%0A-------------------------------------------------------------------------------%0A-------------------------------------------------------------------------------%0A%20-------------------------------------------------------------------------------</text>
       </controlProperties>
     </control>
-    <control controlID="7" controlTypeID="com.balsamiq.mockups::Link" x="752" y="384" w="-1" h="-1" measuredW="148" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Link" x="752" y="384" w="-1" h="-1" measuredW="148" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <href>JWP-UI-Project-View_History%26bm%3BJWP-UI-Project-View_History.bmml%26bm%3BJWP-UI-Project-View_History.bmml%26bm%3BJWP-UI-Project-View_History.bmml</href>
         <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22281%2C353%2C429%2C374%22%20href%3D%22JWP-UI-Project-View_History.bmml%22%20alt%3D%22JWP-UI-Project-View_History%22%20id%3D%227%22/%3E</map>
         <text>Go%20to%20Consult%20History%20%3E%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::TextInput" x="549" y="88" w="218" h="-1" measuredW="45" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>focused</state>
+        <text>Brazil</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="774" y="92" w="126" h="23" measuredW="102" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Search%20Cities</text>
       </controlProperties>
     </control>
   </controls>
