@@ -3,24 +3,22 @@ package br.ucg.cmp1017.jweatherpanel.model.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class WeatherConsult extends WeatherAbstractModel implements
+public class WeatherHistory extends WeatherAbstractModel implements
 		Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6155527785439185547L;
-	private long idHistory;
+	private static final long serialVersionUID = -5376344757681743451L;
 
-	public WeatherConsult() {
+	public WeatherHistory() {
 		super();
 	}
 
-	public WeatherConsult(final long id, final long idHistory) {
+	public WeatherHistory(final long id) {
 		this.id = id;
-		this.idHistory = idHistory;
 	}
 
-	public WeatherConsult(final Date originalDate, final String country,
+	public WeatherHistory(final Date originalDate, final String country,
 			final String city, final String location, final Date time,
 			final String wind, final String visibility,
 			final String skyConditions, final String temperature,
@@ -41,17 +39,9 @@ public class WeatherConsult extends WeatherAbstractModel implements
 		this.pressure = pressure;
 	}
 
-	public long getIdHistory() {
-		return idHistory;
-	}
-
-	public void setIdHistory(final long idHistory) {
-		this.idHistory = idHistory;
-	}
-
 	@Override
 	public String toString() {
-		return "WeatherConsult [location=" + location + ", time=" + time
+		return "WeatherHistory [location=" + location + ", time=" + time
 				+ ", skyConditions=" + skyConditions + ", temperature="
 				+ temperature + ", relativeHumidity=" + relativeHumidity + "]";
 	}
@@ -72,7 +62,7 @@ public class WeatherConsult extends WeatherAbstractModel implements
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		WeatherConsult other = (WeatherConsult) obj;
+		WeatherHistory other = (WeatherHistory) obj;
 		if (id != other.id)
 			return false;
 		return true;
