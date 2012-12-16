@@ -2,10 +2,18 @@ package br.ucg.cmp1017.jweatherpanel.view;
 
 import java.awt.Dimension;
 import java.awt.Font;
+import java.io.Serializable;
 
 import javax.swing.JFrame;
 
-public class WeatherDetailsUI extends JFrame {
+/**
+ * Classe responsável por representar o formulário responsável por detalhar os
+ * registros de consultas ao webservice de meteorologia.
+ * 
+ * @author Filipe Bezerra
+ * 
+ */
+public class WeatherDetailsUI extends JFrame implements Serializable {
 
 	/**
 	 * ID de identificação da versão da classe para manter controle da evolução
@@ -14,13 +22,15 @@ public class WeatherDetailsUI extends JFrame {
 	 * 
 	 * @see {@link http www.javapractices.com/topic/TopicAction.do?Id=45} ou
 	 * @see {@link http blog.caelum.com.br/entendendo-o-serialversionuid/}
+	 * @see {@link http
+	 *      docs.oracle.com/javase/1.4.2/docs/api/java/io/Serializable.html}
+	 * 
 	 */
 	private static final long serialVersionUID = -6600698019494052891L;
 
-	// private JPanel contentPane;
-
 	/**
-	 * Criar e organiza o layout do formulário.
+	 * Cria, inicializa e organiza o layout do formulário e seus componentes.
+	 * 
 	 */
 	public WeatherDetailsUI() {
 		setName("frameDetailsUI");
@@ -32,11 +42,5 @@ public class WeatherDetailsUI extends JFrame {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setAlwaysOnTop(true);
-		/*
-		 * contentPane = new JPanel(); contentPane.setBorder(new EmptyBorder(5,
-		 * 5, 5, 5)); contentPane.setLayout(new BorderLayout(0, 0));
-		 * setContentPane(contentPane);
-		 */
 	}
-
 }
