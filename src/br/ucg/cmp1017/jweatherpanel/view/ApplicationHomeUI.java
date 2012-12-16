@@ -1,14 +1,18 @@
 package br.ucg.cmp1017.jweatherpanel.view;
 
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -35,7 +39,7 @@ public class ApplicationHomeUI extends JFrame {
 	private JTextField txtFieldListCountries;
 	private JComboBox<String> cmbBoxListCities;
 	private JButton btnSearchCities;
-	private JButton btnSearchWearther;
+	private JButton btnConsultWearther;
 
 	// private JPanel contentPane;
 
@@ -69,12 +73,14 @@ public class ApplicationHomeUI extends JFrame {
 		setTitle("JWeatherPanel - Home");
 		getContentPane().setFont(new Font("Verdana", Font.PLAIN, 14));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 595, 447);
+		setSize(new Dimension(800, 600));
 		getContentPane().setLayout(null);
+		setLocationRelativeTo(null);
+		setResizable(false);
 
 		txtFieldListCountries = new JTextField();
 		txtFieldListCountries.setFont(new Font("Verdana", Font.PLAIN, 14));
-		txtFieldListCountries.setBounds(134, 69, 247, 25);
+		txtFieldListCountries.setBounds(134, 69, 479, 25);
 		getContentPane().add(txtFieldListCountries);
 		txtFieldListCountries.setColumns(10);
 
@@ -82,10 +88,10 @@ public class ApplicationHomeUI extends JFrame {
 		cmbBoxListCities.setCursor(Cursor
 				.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cmbBoxListCities.setFont(new Font("Verdana", Font.PLAIN, 14));
-		cmbBoxListCities.setBounds(134, 115, 247, 25);
+		cmbBoxListCities.setBounds(134, 115, 479, 25);
 		getContentPane().add(cmbBoxListCities);
 
-		btnSearchCities = new JButton("Search Cities...");
+		btnSearchCities = new JButton("Search Cities");
 		btnSearchCities.setCursor(Cursor
 				.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnSearchCities.setFont(new Font("Verdana", Font.PLAIN, 14));
@@ -93,15 +99,45 @@ public class ApplicationHomeUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnSearchCities.setBounds(391, 69, 161, 25);
+		btnSearchCities.setBounds(623, 69, 161, 25);
 		getContentPane().add(btnSearchCities);
 
-		btnSearchWearther = new JButton("Search Weather...");
-		btnSearchWearther.setCursor(Cursor
+		btnConsultWearther = new JButton("Consult Weather");
+		btnConsultWearther.setCursor(Cursor
 				.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnSearchWearther.setFont(new Font("Verdana", Font.PLAIN, 14));
-		btnSearchWearther.setBounds(391, 115, 161, 25);
-		getContentPane().add(btnSearchWearther);
+		btnConsultWearther.setFont(new Font("Verdana", Font.PLAIN, 14));
+		btnConsultWearther.setBounds(623, 115, 161, 25);
+		getContentPane().add(btnConsultWearther);
+
+		JLabel lblLinkConsultHistory = new JLabel("Go to Consult History >>");
+		lblLinkConsultHistory.setCursor(Cursor
+				.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblLinkConsultHistory.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				JLabel instanceJLabel = (JLabel) e.getSource();
+				instanceJLabel.setText("<html><u>" + instanceJLabel.getText()
+						+ "</u>");
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				JLabel instanceJLabel = (JLabel) e.getSource();
+				instanceJLabel.setFont(new Font(instanceJLabel.getFont()
+						.getName(), 0, instanceJLabel.getFont().getSize()));
+				instanceJLabel.setText(instanceJLabel.getText()
+						.replace("<html>", "").replace("<u>", "")
+						.replace("</u>", ""));
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new HistoryUI().setVisible(true);
+			}
+		});
+		lblLinkConsultHistory.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lblLinkConsultHistory.setBounds(595, 541, 189, 20);
+		getContentPane().add(lblLinkConsultHistory);
 		/*
 		 * contentPane = new JPanel(); contentPane.setBorder(new EmptyBorder(5,
 		 * 5, 5, 5)); contentPane.setLayout(new BorderLayout(0, 0));

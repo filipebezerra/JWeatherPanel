@@ -1,5 +1,8 @@
 package br.ucg.cmp1017.jweatherpanel.view;
 
+import java.awt.Dimension;
+import java.awt.Font;
+
 import javax.swing.JFrame;
 
 /**
@@ -28,9 +31,15 @@ public class HistoryUI extends JFrame {
 	 * Criar e organiza o layout do formulário.
 	 */
 	public HistoryUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setLayout(null);
+		setName("frameHistoryUI");
+		setTitle("JWeatherPanel - Histórico Dinâmico");
+		getContentPane().setFont(new Font("Verdana", Font.PLAIN, 14));
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setSize(new Dimension(800, 600));
+		getContentPane().setLayout(null);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setAlwaysOnTop(true);
 		/*
 		 * contentPane = new JPanel(); contentPane.setBorder(new EmptyBorder(5,
 		 * 5, 5, 5)); contentPane.setLayout(new BorderLayout(0, 0));
