@@ -1,24 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="2606ea4f-4355-443b-b509-32be482afe74" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
   <comments>
-    <comment Id="da636bd7-cb01-4c9d-be1f-39222dc8e248" name="Comment1">
-      <body>Represent the layer responsible for execute the CRUD operations.</body>
-      <layerElements>
-        <linkFromCommentToLayerElement>
-          <layerMoniker Id="f85bd4dd-417e-4005-b6b0-457b20eb8b9b" />
-        </linkFromCommentToLayerElement>
-      </layerElements>
-    </comment>
-    <comment Id="615fd75e-b48b-4ee8-ab29-9f1a9bd84211" name="Comment2">
-      <body>Represent the layer reponsible for external communications, such as: WebServices, SGBDR.</body>
-      <layerElements>
-        <linkFromCommentToLayerElement>
-          <layerMoniker Id="22920ff0-7c27-4f47-a9c3-ba718bfd0667" />
-        </linkFromCommentToLayerElement>
-      </layerElements>
-    </comment>
     <comment Id="3cfac633-a070-4880-8f14-e012dc89377d" name="Comment3">
-      <body>Represent the layer responsible for store and transport the data.</body>
+      <body>Representa a camada responsável pelo domínio, lógica e dados da aplicação. Nesta camada são efetuadas operações CRUD, regra de negócio e armazenamento e transporte do domínio  do negócio.</body>
       <layerElements>
         <linkFromCommentToLayerElement>
           <layerMoniker Id="684712a4-fb2e-425a-9cfe-e9351b17523d" />
@@ -26,7 +10,7 @@
       </layerElements>
     </comment>
     <comment Id="4c478b2a-5088-4bdf-97d9-4447aa80f89d" name="Comment4">
-      <body>Represent the layer responsible for display information and interact with the user.</body>
+      <body>Representa a camada  responsável interação com usuário. Nesta camada dados são gerados a partir da entrada de ações e dados do usuário e infomações são apresentadas e atualizadas.</body>
       <layerElements>
         <linkFromCommentToLayerElement>
           <layerMoniker Id="afe5e451-9065-489d-8e49-69c990595a9f" />
@@ -34,8 +18,19 @@
       </layerElements>
     </comment>
     <comment Id="b450995d-badc-4cc8-80b7-b6d53c349ed2" name="Comment5">
-      <body>Represent the layer responsible for execute the logic necessary to maintain consistency between the data and the information displayed in the user view.</body>
+      <body>Representa a camada responsável por delegar e controlar a execução dos serviços que o sistema fornece.</body>
       <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="232b0a2d-f142-4609-b761-2acb53929bf4" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="b21207e6-2b8b-43a9-89eb-051d9cc0ee44" name="Comment1">
+      <body>A dependência bidirecional entre as camadas View e Controller é baixa pois classes da View somente conhecem seus Controllers por meio de sua abstração (Interface)</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="afe5e451-9065-489d-8e49-69c990595a9f" />
+        </linkFromCommentToLayerElement>
         <linkFromCommentToLayerElement>
           <layerMoniker Id="232b0a2d-f142-4609-b761-2acb53929bf4" />
         </linkFromCommentToLayerElement>
@@ -43,34 +38,18 @@
     </comment>
   </comments>
   <layers>
-    <layer Id="232b0a2d-f142-4609-b761-2acb53929bf4" name="&lt;&lt;Controller&gt;&gt;&#xD;&#xA;Negocio">
+    <layer Id="232b0a2d-f142-4609-b761-2acb53929bf4" name="Controller">
       <dependencyToLayers>
         <dependencyFromLayerToLayer Id="8b332108-1604-466b-86cd-a3661822126a" direction="Forward">
           <layerMoniker Id="684712a4-fb2e-425a-9cfe-e9351b17523d" />
         </dependencyFromLayerToLayer>
-        <dependencyFromLayerToLayer Id="9f3c84fa-c29b-4ab8-bb9a-e4594398a936" direction="Forward">
-          <layerMoniker Id="f85bd4dd-417e-4005-b6b0-457b20eb8b9b" />
-        </dependencyFromLayerToLayer>
-        <dependencyFromLayerToLayer Id="383801f9-5180-4a4f-a7fb-cc26b88c4624" direction="Forward">
-          <layerMoniker Id="22920ff0-7c27-4f47-a9c3-ba718bfd0667" />
-          <description>Camada de Negócio envia notificação a Camada do Sistema
-de que uma requisição request (request &gt; response) foi solicitada.</description>
-        </dependencyFromLayerToLayer>
       </dependencyToLayers>
     </layer>
-    <layer Id="684712a4-fb2e-425a-9cfe-e9351b17523d" name="&lt;&lt;Model&gt;&gt;&#xD;&#xA;Dominio" />
-    <layer Id="afe5e451-9065-489d-8e49-69c990595a9f" name="&lt;&lt;View&gt;&gt;&#xD;&#xA;Interface">
+    <layer Id="684712a4-fb2e-425a-9cfe-e9351b17523d" name="Model" />
+    <layer Id="afe5e451-9065-489d-8e49-69c990595a9f" name="View">
       <dependencyToLayers>
-        <dependencyFromLayerToLayer Id="d91b2edb-c11a-4e49-acb6-a039d34c8302" direction="Forward">
+        <dependencyFromLayerToLayer Id="d91b2edb-c11a-4e49-acb6-a039d34c8302" direction="Bidirectional">
           <layerMoniker Id="232b0a2d-f142-4609-b761-2acb53929bf4" />
-        </dependencyFromLayerToLayer>
-      </dependencyToLayers>
-    </layer>
-    <layer Id="f85bd4dd-417e-4005-b6b0-457b20eb8b9b" name="&lt;&lt;Persistence&gt;&gt;&#xD;&#xA;Persistencia" />
-    <layer Id="22920ff0-7c27-4f47-a9c3-ba718bfd0667" name="&lt;&lt;Boundary&gt;&gt;&#xD;&#xA;Sistema">
-      <dependencyToLayers>
-        <dependencyFromLayerToLayer Id="3b58cdd8-9fd3-483e-9db6-450ddbeb4aae" direction="Forward">
-          <layerMoniker Id="684712a4-fb2e-425a-9cfe-e9351b17523d" />
         </dependencyFromLayerToLayer>
       </dependencyToLayers>
     </layer>
