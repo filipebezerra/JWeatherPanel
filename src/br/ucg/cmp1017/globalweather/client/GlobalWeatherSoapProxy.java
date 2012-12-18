@@ -1,8 +1,8 @@
-package br.ucg.cmp1017.globalweather.service;
+package br.ucg.cmp1017.globalweather.client;
 
-public class GlobalWeatherSoapProxy implements br.ucg.cmp1017.globalweather.service.GlobalWeatherSoap {
+public class GlobalWeatherSoapProxy implements br.ucg.cmp1017.globalweather.client.GlobalWeatherSoap {
   private String _endpoint = null;
-  private br.ucg.cmp1017.globalweather.service.GlobalWeatherSoap globalWeatherSoap = null;
+  private br.ucg.cmp1017.globalweather.client.GlobalWeatherSoap globalWeatherSoap = null;
   
   public GlobalWeatherSoapProxy() {
     _initGlobalWeatherSoapProxy();
@@ -15,7 +15,7 @@ public class GlobalWeatherSoapProxy implements br.ucg.cmp1017.globalweather.serv
   
   private void _initGlobalWeatherSoapProxy() {
     try {
-      globalWeatherSoap = (new br.ucg.cmp1017.globalweather.service.GlobalWeatherLocator()).getGlobalWeatherSoap();
+      globalWeatherSoap = (new br.ucg.cmp1017.globalweather.client.GlobalWeatherLocator()).getGlobalWeatherSoap();
       if (globalWeatherSoap != null) {
         if (_endpoint != null)
           ((javax.xml.rpc.Stub)globalWeatherSoap)._setProperty("javax.xml.rpc.service.endpoint.address", _endpoint);
@@ -38,7 +38,7 @@ public class GlobalWeatherSoapProxy implements br.ucg.cmp1017.globalweather.serv
     
   }
   
-  public br.ucg.cmp1017.globalweather.service.GlobalWeatherSoap getGlobalWeatherSoap() {
+  public br.ucg.cmp1017.globalweather.client.GlobalWeatherSoap getGlobalWeatherSoap() {
     if (globalWeatherSoap == null)
       _initGlobalWeatherSoapProxy();
     return globalWeatherSoap;

@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.ucg.cmp1017.globalweather.service;
+package br.ucg.cmp1017.globalweather.client;
 
-public class GlobalWeatherLocator extends org.apache.axis.client.Service implements br.ucg.cmp1017.globalweather.service.GlobalWeather {
+public class GlobalWeatherLocator extends org.apache.axis.client.Service implements br.ucg.cmp1017.globalweather.client.GlobalWeather {
 
     public GlobalWeatherLocator() {
     }
@@ -39,7 +39,7 @@ public class GlobalWeatherLocator extends org.apache.axis.client.Service impleme
         GlobalWeatherSoapWSDDServiceName = name;
     }
 
-    public br.ucg.cmp1017.globalweather.service.GlobalWeatherSoap getGlobalWeatherSoap() throws javax.xml.rpc.ServiceException {
+    public br.ucg.cmp1017.globalweather.client.GlobalWeatherSoap getGlobalWeatherSoap() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(GlobalWeatherSoap_address);
@@ -50,9 +50,9 @@ public class GlobalWeatherLocator extends org.apache.axis.client.Service impleme
         return getGlobalWeatherSoap(endpoint);
     }
 
-    public br.ucg.cmp1017.globalweather.service.GlobalWeatherSoap getGlobalWeatherSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public br.ucg.cmp1017.globalweather.client.GlobalWeatherSoap getGlobalWeatherSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            br.ucg.cmp1017.globalweather.service.GlobalWeatherSoapStub _stub = new br.ucg.cmp1017.globalweather.service.GlobalWeatherSoapStub(portAddress, this);
+            br.ucg.cmp1017.globalweather.client.GlobalWeatherSoapStub _stub = new br.ucg.cmp1017.globalweather.client.GlobalWeatherSoapStub(portAddress, this);
             _stub.setPortName(getGlobalWeatherSoapWSDDServiceName());
             return _stub;
         }
@@ -72,8 +72,8 @@ public class GlobalWeatherLocator extends org.apache.axis.client.Service impleme
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (br.ucg.cmp1017.globalweather.service.GlobalWeatherSoap.class.isAssignableFrom(serviceEndpointInterface)) {
-                br.ucg.cmp1017.globalweather.service.GlobalWeatherSoapStub _stub = new br.ucg.cmp1017.globalweather.service.GlobalWeatherSoapStub(new java.net.URL(GlobalWeatherSoap_address), this);
+            if (br.ucg.cmp1017.globalweather.client.GlobalWeatherSoap.class.isAssignableFrom(serviceEndpointInterface)) {
+                br.ucg.cmp1017.globalweather.client.GlobalWeatherSoapStub _stub = new br.ucg.cmp1017.globalweather.client.GlobalWeatherSoapStub(new java.net.URL(GlobalWeatherSoap_address), this);
                 _stub.setPortName(getGlobalWeatherSoapWSDDServiceName());
                 return _stub;
             }
