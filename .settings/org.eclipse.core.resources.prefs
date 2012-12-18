@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/br/ucg/cmp1017/globalweather/service/GlobalWeather.java=UTF-8
-encoding//src/br/ucg/cmp1017/globalweather/service/GlobalWeatherLocator.java=UTF-8
-encoding//src/br/ucg/cmp1017/globalweather/service/GlobalWeatherSoap.java=UTF-8
-encoding//src/br/ucg/cmp1017/globalweather/service/GlobalWeatherSoapStub.java=UTF-8
+encoding//src/br/ucg/cmp1017/globalweather/client/GlobalWeather.java=UTF-8
+encoding//src/br/ucg/cmp1017/globalweather/client/GlobalWeatherLocator.java=UTF-8
+encoding//src/br/ucg/cmp1017/globalweather/client/GlobalWeatherSoap.java=UTF-8
+encoding//src/br/ucg/cmp1017/globalweather/client/GlobalWeatherSoapStub.java=UTF-8

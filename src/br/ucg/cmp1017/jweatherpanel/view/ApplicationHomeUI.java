@@ -155,7 +155,7 @@ public class ApplicationHomeUI extends JFrame implements Serializable {
 
 			@Override
 			public void mouseClicked(final MouseEvent e) {
-				new HistoryUI().setVisible(true);
+				new WeatherHistoryUI().setVisible(true);
 			}
 		});
 
