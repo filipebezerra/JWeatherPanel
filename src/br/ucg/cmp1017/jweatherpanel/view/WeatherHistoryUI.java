@@ -14,7 +14,7 @@ import javax.swing.JFrame;
  * @author Filipe Bezerra
  * 
  */
-public class HistoryUI extends JFrame implements Serializable {
+public class WeatherHistoryUI extends JFrame implements Serializable {
 
 	/**
 	 * ID de identificação da versão da classe para manter controle da evolução
@@ -33,7 +33,7 @@ public class HistoryUI extends JFrame implements Serializable {
 	 * Cria, inicializa e organiza o layout do formulário e seus componentes.
 	 * 
 	 */
-	public HistoryUI() {
+	public WeatherHistoryUI() {
 		setName("frameHistoryUI");
 		setTitle("JWeatherPanel - Histórico Dinâmico");
 		getContentPane().setFont(new Font("Verdana", Font.PLAIN, 14));
