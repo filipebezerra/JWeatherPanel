@@ -2,6 +2,8 @@ package br.ucg.cmp1017.jweatherpanel.model.entity;
 
 import java.util.Date;
 
+import com.towel.el.annotation.Resolvable;
+
 /**
  * Classe abstrata que é responsável por ser um modelo para as classes concretas
  * {@link WeatherConsult} e {@link WeatherHistory}.
@@ -17,23 +19,22 @@ public abstract class WeatherAbstractModel {
 	/**
 	 * Valor data/hora da requisição de consulta ao webservice
 	 */
+	@Resolvable(colName = "Data/Hora")
 	protected Date originalDate;
 	/**
 	 * Valor do país da consulta do tempo
 	 */
+	@Resolvable(colName = "País")
 	protected String country;
 	/**
 	 * Valor da cidade da consulta do tempo
 	 */
+	@Resolvable(colName = "Cidade")
 	protected String city;
 	/**
 	 * Valor da localização da consulta do tempo
 	 */
 	protected String location;
-	/**
-	 * Valor da data/hora da consulta do tempo
-	 */
-	protected Date time;
 	/**
 	 * Valor do vento da consulta do tempo
 	 */
@@ -41,6 +42,7 @@ public abstract class WeatherAbstractModel {
 	/**
 	 * Valor da visilidade da consulta do tempo
 	 */
+	@Resolvable(colName = "Visibilidade")
 	protected String visibility;
 	/**
 	 * Valor das condições do céu da consulta do tempo
@@ -49,11 +51,8 @@ public abstract class WeatherAbstractModel {
 	/**
 	 * Valor da temperatura da consulta do tempo
 	 */
+	@Resolvable(colName = "Temperatura")
 	protected String temperature;
-	/**
-	 * Valor da sensação do tempo da consulta do tempo
-	 */
-	protected String windchill;
 	/**
 	 * Valor do ponto de orvalho da consulta do tempo
 	 */
@@ -186,27 +185,6 @@ public abstract class WeatherAbstractModel {
 	}
 
 	/**
-	 * Obter valor da data/hora. Valor retornado da consulta ao webservice
-	 * 
-	 * @return Valor da data/hora
-	 * 
-	 */
-	public Date getTime() {
-		return time;
-	}
-
-	/**
-	 * Alterar valor da data/hora. Valor retornado da consulta ao webservice
-	 * 
-	 * @param time
-	 *            Valor da data/hora
-	 * 
-	 */
-	public void setTime(final Date time) {
-		this.time = time;
-	}
-
-	/**
 	 * Obter valor do vento. Valor retornado da consulta ao webservice
 	 * 
 	 * @return Valor do vento
@@ -290,29 +268,6 @@ public abstract class WeatherAbstractModel {
 	 */
 	public void setTemperature(final String temperature) {
 		this.temperature = temperature;
-	}
-
-	/**
-	 * Obter valor da sensação do tempo. Valor retornado da consulta ao
-	 * webservice
-	 * 
-	 * @return Valor da sensação do tempo
-	 * 
-	 */
-	public String getWindchill() {
-		return windchill;
-	}
-
-	/**
-	 * Alterar valor da sensação do tempo. Valor retornado da consulta ao
-	 * webservice
-	 * 
-	 * @param windchill
-	 *            Valor da sensação do tempo
-	 * 
-	 */
-	public void setWindchill(final String windchill) {
-		this.windchill = windchill;
 	}
 
 	/**

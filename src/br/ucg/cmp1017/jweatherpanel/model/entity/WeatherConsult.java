@@ -64,8 +64,6 @@ public class WeatherConsult extends WeatherAbstractModel implements
 	 *            Valor da cidade da consulta do tempo
 	 * @param location
 	 *            Valor da localização da consulta do tempo
-	 * @param time
-	 *            Valor da data/hora da consulta do tempo
 	 * @param wind
 	 *            Valor do vento da consulta do tempo
 	 * @param visibility
@@ -74,8 +72,6 @@ public class WeatherConsult extends WeatherAbstractModel implements
 	 *            Valor das condições do céu da consulta do tempo
 	 * @param temperature
 	 *            Valor da temperatura da consulta do tempo
-	 * @param windchill
-	 *            Valor da sensação do tempo da consulta do tempo
 	 * @param dewPoint
 	 *            Valor do ponto de orvalho da consulta do tempo
 	 * @param relativeHumidity
@@ -85,21 +81,18 @@ public class WeatherConsult extends WeatherAbstractModel implements
 	 * 
 	 */
 	public WeatherConsult(final Date originalDate, final String country,
-			final String city, final String location, final Date time,
-			final String wind, final String visibility,
-			final String skyConditions, final String temperature,
-			final String windchill, final String dewPoint,
+			final String city, final String location, final String wind,
+			final String visibility, final String skyConditions,
+			final String temperature, final String dewPoint,
 			final float relativeHumidity, final float pressure) {
 		this.originalDate = originalDate;
 		this.country = country;
 		this.city = city;
 		this.location = location;
-		this.time = time;
 		this.wind = wind;
 		this.visibility = visibility;
 		this.skyConditions = skyConditions;
 		this.temperature = temperature;
-		this.windchill = windchill;
 		this.dewPoint = dewPoint;
 		this.relativeHumidity = relativeHumidity;
 		this.pressure = pressure;
@@ -134,9 +127,10 @@ public class WeatherConsult extends WeatherAbstractModel implements
 	 */
 	@Override
 	public String toString() {
-		return "WeatherConsult [location=" + location + ", time=" + time
-				+ ", skyConditions=" + skyConditions + ", temperature="
-				+ temperature + ", relativeHumidity=" + relativeHumidity + "]";
+		return "WeatherConsult [location=" + location + ", originalDate="
+				+ originalDate + ", skyConditions=" + skyConditions
+				+ ", temperature=" + temperature + ", relativeHumidity="
+				+ relativeHumidity + "]";
 	}
 
 	/**

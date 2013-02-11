@@ -1,11 +1,11 @@
 package br.ucg.cmp1017.jweatherpanel.controller;
 
-import java.rmi.RemoteException;
 import java.util.List;
 
 import br.ucg.cmp1017.globalweather.client.GlobalWeatherSoap;
 import br.ucg.cmp1017.globalweather.client.GlobalWeatherSoapProxy;
 import br.ucg.cmp1017.jweatherpanel.model.entity.City;
+import br.ucg.cmp1017.jweatherpanel.model.entity.WeatherConsult;
 import br.ucg.cmp1017.jweatherpanel.model.service.HomeServiceImpl;
 import br.ucg.cmp1017.jweatherpanel.model.service.IHomeService;
 import br.ucg.cmp1017.jweatherpanel.view.ApplicationHomeUI;
@@ -30,7 +30,7 @@ public class HomeControllerImpl implements IHomeController {
 	}
 
 	@Override
-	public void searchCities(final String countryName) throws RemoteException {
+	public void searchCities(final String countryName) throws Exception {
 		GlobalWeatherSoap weather = new GlobalWeatherSoapProxy();
 		String citiesXml = weather.getCitiesByCountry(countryName);
 		IHomeService homeService = new HomeServiceImpl();
@@ -50,10 +50,14 @@ public class HomeControllerImpl implements IHomeController {
 
 	@Override
 	public void consultWeather(final String countryName, final String cityName)
-			throws RemoteException {
+			throws Exception {
 		GlobalWeatherSoap weather = new GlobalWeatherSoapProxy();
 		String weatherXml = weather.getWeather(cityName, countryName);
-		System.out.println(weatherXml);
+		IHomeService homeService = new HomeServiceImpl();
+		WeatherConsult weatherConsult = homeService.getWeatherConsult(
+				countryName, cityName, weatherXml);
+
+		homeFrame.getTableModelDetails().add(weatherConsult);
 	}
 
 	@Override
