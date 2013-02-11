@@ -10,5 +10,8 @@
 	<classpathentry kind="lib" path="lib/postgresql-9.1-902.jdbc4.jar"/>
 	<classpathentry kind="lib" path="lib/saaj.jar"/>
 	<classpathentry kind="lib" path="lib/xstream-1.4.3.jar"/>
+	<classpathentry kind="lib" path="lib/towel-v1.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-2.0.0-ALPHA-2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
